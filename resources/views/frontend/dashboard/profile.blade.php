@@ -16,13 +16,12 @@
                             itemtype="https://schema.org/ListItem">
                             <a itemprop="item" href="/">
                                 <span itemprop="name">
-                                    Main </span>
-                                <img src="{{ asset('frontend/icons/arrow-right.svg') }}" alt="arrow-right" height="12"
-                                    width="12">
+                                    Main >
+                                </span>
                             </a>
                         </li>
                         <li class=" active" aria-current="page">
-                            <span>Profile</span>
+                            <span> Profile</span>
                         </li>
                     </ol>
                 </nav>

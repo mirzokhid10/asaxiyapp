@@ -22,10 +22,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Public routes
         Route::middleware('web')
             ->group(base_path('routes/web.php'));
 
-        Route::middleware(['web', 'auth', \App\Http\Middleware\RoleMiddleware::class . ':admin'])
+        // Admin routes (must be logged in as admin)
+        Route::middleware(['web', 'auth', 'role:admin'])
             ->prefix('admin')
             ->as('admin.')
             ->group(base_path('routes/admin.php'));

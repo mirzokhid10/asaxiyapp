@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
@@ -8,24 +9,13 @@ use App\Http\Controllers\Socialite\ProviderRedirectController;
 use App\Http\Controllers\Socialite\ProviderCallbackController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/auth/{provider}/redirect', ProviderRedirectController::class)
     ->name('auth.redirect');
 
 Route::get('/auth/{provider}/callback', ProviderCallbackController::class)
     ->name('auth.callback');
-
-
-Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-    Route::get('profile', [UserProfileController::class, 'index'])->name('profile'); // user.profile
-    Route::get('profile/edit', [UserProfileController::class, 'editProfile'])->name('profile.edit');
-    Route::put('profile', [UserProfileController::class, 'updateProfile'])->name('profile.update'); // user.profile.update
-    Route::post('profile', [UserProfileController::class, 'updatePassword'])->name('profile.update.password'); // user.profile.password
-});
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,3 +24,20 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+///////////////////////////////////////////
+////    Admin Controller Route
+///////////////////////////////////////////
+
+Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+///////////////////////////////////////////
+////    User Controller Route
+///////////////////////////////////////////
+
+Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::get('dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+    Route::get('profile', [UserProfileController::class, 'index'])->name('profile'); // user.profile
+    Route::put('profile', [UserProfileController::class, 'updateProfile'])->name('profile.update'); // user.profile.update
+    Route::post('profile', [UserProfileController::class, 'updatePassword'])->name('profile.update.password');
+});

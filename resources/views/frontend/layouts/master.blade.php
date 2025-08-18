@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/authchoice.css') }}">
 
+    {{-- Swiper CSS Links --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     {{-- Notification Lib Css Link --}}
     @notifyCss
 
@@ -48,7 +51,9 @@
     <!--============================
             Main Content Start
         ==============================-->
+
     @yield('content')
+
     <!--============================
         Main Content End
         ==============================-->
@@ -71,6 +76,16 @@
 
     @include('auth.login')
 
+    <script src="{{ asset('frontend/js/jquery.js') }}"></script>
+    <script src="{{ asset('frontend/js/countdown.js') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap-bundle.js') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap-notify.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery-fancybox.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery-nice-select.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery-pjax.js') }}"></script>
+    <script src="{{ asset('frontend/js/lazyload.js') }}"></script>
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
+    <script src="{{ asset('frontend/js/swiper-bundle.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
@@ -78,9 +93,15 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
 
+    {{-- Swiper JS Link --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     {{-- Notification Lib JS Link --}}
     <x-notify::notify />
     @notifyJs
+
+    @include('frontend.layouts.scripts')
+    @stack('scripts')
 </body>
 
 </html>

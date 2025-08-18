@@ -19282,3 +19282,9 @@ form .my__adress-input:checked + .address_list p img {
 .profile__form-control {
     padding: 0 !important;
 }
+
+#toast-container > .toast {
+    font-size: 16px; /* bigger text */
+    padding: 20px; /* more space inside */
+    border-radius: 6px;
+}
