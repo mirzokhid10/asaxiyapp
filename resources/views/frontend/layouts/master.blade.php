@@ -69,7 +69,7 @@
     <!--============================
             FOOTER PART START
         ==============================-->
-    @include('frontend.layouts.footer')
+    {{-- @include('frontend.layouts.footer') --}}
     <!--============================
             FOOTER PART END
         ==============================-->

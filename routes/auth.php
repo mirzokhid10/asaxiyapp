@@ -9,6 +9,10 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\User;
+use Illuminate\Auth\Events\Verified;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -36,15 +40,31 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('verify-email', EmailVerificationPromptController::class)
+    // Route::get('verify/email', EmailVerificationPromptController::class)
+    //     ->name('verification.notice');
+
+    // Route::get('verify/email/{id}/{hash}', VerifyEmailController::class)
+    //     ->middleware(['signed', 'throttle:6,1'])
+    //     ->name('verification.verify');
+
+    // Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+    //     ->middleware('throttle:6,1')
+    //     ->name('verification.send');
+    Route::get('verify/email', fn() => response('Verification disabled', 200))
         ->name('verification.notice');
 
-    Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
-        ->middleware(['signed', 'throttle:6,1'])
-        ->name('verification.verify');
+    Route::get('verify/email/{id}/{hash}', function ($id, $hash) {
+        $user = User::findOrFail($id);
+        // Only verify if the hash matches
+        if (! $user->hasVerifiedEmail() && hash_equals(sha1($user->email), $hash)) {
+            if ($user->markEmailAsVerified()) {
+                event(new Verified($user));
+            }
+        }
+        return redirect(RouteServiceProvider::HOME . '?verified=1');
+    })->name('verification.verify');
 
-    Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-        ->middleware('throttle:6,1')
+    Route::post('email/verification-notification', fn() => back()->with('status', 'Verification disabled'))
         ->name('verification.send');
 
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
