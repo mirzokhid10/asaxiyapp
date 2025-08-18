@@ -47,7 +47,6 @@ class BrandController extends Controller
             'image.image'        => 'Logo must be a valid image file.',
             'image.max'          => 'Logo image may not be greater than 4MB.',
             'name.required'      => 'Brand name is required.',
-            'slug.required'      => 'Slug is required.',
             'link.url'           => 'Brand link must be a valid URL.',
             'status.required'    => 'Status is required.',
             'status.boolean'     => 'Status must be true or false.',
@@ -118,7 +117,6 @@ class BrandController extends Controller
             'image.image'        => 'Logo must be a valid image file.',
             'image.max'          => 'Logo image may not be greater than 4MB.',
             'name.required'      => 'Brand name is required.',
-            'slug.required'      => 'Slug is required.',
             'link.url'           => 'Brand link must be a valid URL.',
             'status.required'    => 'Status is required.',
             'status.boolean'     => 'Status must be true or false.',
@@ -162,7 +160,7 @@ class BrandController extends Controller
     {
         $brands = Brands::findOrFail($id);
 
-        $this->deleteImage($brands->logo);
+        $this->deleteImage($brands->image);
         $brands->delete();
 
         notify()->success('Brand Information Deleted Successfully!');
@@ -178,5 +176,10 @@ class BrandController extends Controller
 
 
         return response()->json(['message' => 'Brand Status Changed Successfully!']);
+    }
+
+    public function getData()
+    {
+        return datatables()->of(Brands::query())->make(true);
     }
 }

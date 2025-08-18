@@ -37,4 +37,5 @@ Route::post('advertisement/homepage-banner-section-two/status-update', [Advertis
 ///////////////////////////////////////////
 
 Route::put('brands/change-status', [BrandController::class, 'changeStatus'])->name('brands.change-status');
+Route::get('brands/data', [BrandController::class, 'getData'])->name('brands.data');
 Route::resource('brands', BrandController::class);

@@ -14,13 +14,25 @@ class BrandFeatureTest extends TestCase
 
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $admin = \App\Models\User::factory()->create([
+            'role' => 'admin',
+        ]);
+
+        $this->actingAs($admin);
+    }
+
     /** @test */
     public function index_displays_brands()
     {
         $brand = Brands::factory()->create(['name' => 'Nike']);
-        $response = $this->get(route('admin.brands.index'));
+        $response = $this->getJson(route('admin.brands.data'));
+
         $response->assertStatus(200);
-        $response->assertSee('Nike');
+        $response->assertJsonFragment(['name' => 'Nike']);
     }
 
     /** @test */
@@ -39,7 +51,6 @@ class BrandFeatureTest extends TestCase
         ]);
 
         $response->assertRedirect(route('admin.brands.index'));
-
         $this->assertDatabaseHas('brands', ['name' => 'Adidas']);
     }
 
