@@ -43,7 +43,7 @@
     <!--============================
             MAIN MENU START
         ==============================-->
-    @include('frontend.layouts.menu')
+    @include('frontend.layouts.navbar')
     <!--============================
             MOBILE MENU END
         ==============================-->
@@ -77,6 +77,8 @@
     @include('auth.login')
 
     <script src="{{ asset('frontend/js/jquery.js') }}"></script>
+
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="{{ asset('frontend/js/countdown.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap-bundle.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap-notify.js') }}"></script>
@@ -84,7 +86,6 @@
     <script src="{{ asset('frontend/js/jquery-nice-select.js') }}"></script>
     <script src="{{ asset('frontend/js/jquery-pjax.js') }}"></script>
     <script src="{{ asset('frontend/js/lazyload.js') }}"></script>
-    <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="{{ asset('frontend/js/swiper-bundle.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">

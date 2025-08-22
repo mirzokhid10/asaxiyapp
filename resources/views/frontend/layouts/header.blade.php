@@ -11,8 +11,8 @@
                     <img class="img-fluid" src="{{ asset('frontend/logo/asaxiy-logo.svg') }}" alt="asaxiy logo">
                 </a>
 
-                <a class="open__menu header__nav__link text-white d-flex justify-content-between align-items-center btn default-btn btn-primary-custom py-2 "
-                    href="javascript:void(0)" onclick="toggleMenu()">
+                <a id="menuToggleBtn" class="open__menu header__nav__link text-white d-flex justify-content-between align-items-center btn default-btn btn-primary-custom py-2 "
+                    href="javascript:void(0)" >
                     <div class="hamburger-small">
                         <div class="hamburger__inner">
                             <div class="hamburger__item"></div>

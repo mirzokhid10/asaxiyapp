@@ -238,6 +238,8 @@ sidebarOverlay.on("click", function (evt) {
 
 let hamburgerSmall = $(".hamburger-small");
 let megaMenu = $(".mega__menu");
+const megaMenu = $(".mega__menu");
+
 
 function openMenu() {
     $(".header__bottom").removeClass("d-none");
@@ -250,14 +252,15 @@ function closeMenu() {
     hamburgerSmall.removeClass("active");
 }
 
-function toggleMenu() {
+$("#menuToggleBtn").on("click", function (e) {
+    e.preventDefault();
     megaMenu.toggleClass("active");
     if (megaMenu.hasClass("active")) {
         openMenu();
     } else {
         closeMenu();
     }
-}
+});
 
 $(document).keyup(function (e) {
     if (e.keyCode === 27) {
@@ -954,48 +957,6 @@ function closeLoader() {
 }
 
 var timeout;
-
-$(document).ready(function () {
-    var timeout = null; // Ensure 'timeout' is defined
-
-    $(".mega__menu-list > li > .tab-open").on("mouseenter", function () {
-        var thisElement = $(this);
-
-        if (timeout != null) {
-            clearTimeout(timeout);
-        }
-
-        timeout = setTimeout(function () {
-            $(".mega__menu-right > .tab-content").removeClass("tab-active");
-            $(
-                ".mega__menu-right > .tab-content[data-id='" +
-                    thisElement.attr("data-id") +
-                    "']"
-            ).addClass("tab-active");
-            $(".mega__menu-list > li > .tab-open").removeClass("opened");
-            thisElement.parent().find(".tab-open").addClass("opened");
-            $(
-                ".mega__menu-right > .tab-content[data-id='" +
-                    thisElement.attr("data-id") +
-                    "'] .mega__menu-button-icon"
-            ).addClass("active");
-            setTimeout(function () {
-                $(
-                    ".mega__menu-right > .tab-content[data-id='" +
-                        thisElement.attr("data-id") +
-                        "'] .mega__menu-button-icon"
-                ).removeClass("active");
-            }, 1200);
-        }, 250);
-    });
-
-    $(".mega__menu-list > li > .tab-open").on("mouseleave", function () {
-        if (timeout != null) {
-            clearTimeout(timeout);
-            timeout = null;
-        }
-    });
-});
 
 function headerLastSearch() {
     document.addEventListener("DOMContentLoaded", function () {

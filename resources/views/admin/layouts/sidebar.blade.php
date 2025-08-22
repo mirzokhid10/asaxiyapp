@@ -51,37 +51,25 @@
             </li>
             <li class="menu-header">Stisla</li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
-                    <span>Components</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="components-article.html">Article</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a>
-                    </li>
-                    <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty
-                            State</a></li>
-                    <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>
-                    <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a>
-                    </li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a>
-                    </li>
-                    <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>
-                    <li><a class="nav-link" href="components-tab.html">Tab</a></li>
-                    <li><a class="nav-link" href="components-table.html">Table</a></li>
-                    <li><a class="nav-link" href="components-user.html">User</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a>
-                    </li>
-                </ul>
+                <a href="{{route('admin.category.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                        viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4 4h5v5H4zm-2 7V2h9v9zm2 4h5v5H4zm-2
+                        7v-9h9v9zM20 4h-5v5h5zm-7-2v9h9V2zm2 13h5v5h-5zm-2 7v-9h9v9z"/></svg>
+                    <span>Category Management</span></a>
             </li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i>
-                    <span>Forms</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                    <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                    <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                </ul>
+                <a href="{{route('admin.sub-category.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 3a3 3 0 1 0 6 0a3 3 0 1 0-6 0"/></svg>
+                    <span>SubCategory</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{route('admin.child-category.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor"stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/>
+                            <path d="M14 14h6v5a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-5ZM4 4h6v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4Z"/></g></svg>
+                    <span>ChildCategory</span></a>
             </li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i>

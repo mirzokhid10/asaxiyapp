@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ecommerce Dashboard &mdash; Stisla</title>
 
     <!-- General CSS Files -->
@@ -28,8 +28,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     {{-- Yajra Datatables CSS Link --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.min.css">
+    {{--Sweetalert2 Link CSS--}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     @notifyCss
 </head>
@@ -59,6 +60,7 @@
     </div>
 
     <!-- General JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('backend/assets/modules/jquery.min.js') }}"></script>
     <script src="{{ asset('backend/assets/modules/popper.js') }}"></script>
     <script src="{{ asset('backend/assets/modules/tooltip.js') }}"></script>
@@ -83,7 +85,8 @@
 
     {{-- Yajra Datatables JS Link --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.3.3/js/dataTables.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
@@ -91,6 +94,7 @@
 
     {{-- Notification JS Files --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <x-notify::notify />
     @notifyJs
     <script>
