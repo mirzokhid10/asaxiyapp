@@ -59,4 +59,34 @@ trait ImageUploadTrait
             File::delete(public_path($path));
         }
     }
+
+    public function authorize()
+    {
+        return true; // or check permissions if needed
+    }
+
+    public function rules()
+    {
+        return [
+            'name'           => 'required|string|max:255',
+            'email'          => 'required|email|max:255|unique:users,email,' . $this->user()->id,
+            'phone'          => 'required|string|max:255',
+            'passport_seria' => 'required|string|max:255',
+            'birth_date'     => 'required|date',
+            'address'        => 'required|string|max:255',
+            'image'          => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required'    => 'Your name is required.',
+            'email.required'   => 'Your email address is required.',
+            'email.unique'     => 'This email is already taken.',
+            'birth_date.date'  => 'Birth date must be a valid date.',
+            'image.image'      => 'Profile picture must be a valid image file.',
+            'image.max'        => 'Profile picture may not be greater than 2MB.',
+        ];
+    }
 }

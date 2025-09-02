@@ -2563,6 +2563,7 @@ var Swiper = (function () {
                 : e[c]("observerUpdate", q, !0),
             r[d]("load", e.onLoad, { capture: !0 });
     };
+
     const U = (e, t) => e.grid && t.grid && t.grid.rows > 1;
     var K = {
         init: !0,

@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="{{route('admin.dashboard')}}">Stisla</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="{{route('admin.dashboard')}}">St</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -12,44 +12,23 @@
                 <a href="{{ route('admin.dashboard') }}" class="nav-link"><i
                         class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            <li class="menu-header">Starter</li>
+            <li class="menu-header">Products Managment</li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Layout</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                    <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                    <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+                <a href="{{route('admin.products.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 2048 2048">
+                        <path fill="currentColor" d="m1344 2l704 352v785l-128-64V497l-512 256v258l-128 64V753L768 497v227l-128-64V354L1344 2zm0
+                        640l177-89l-463-265l-211 106l497 248zm315-157l182-91l-497-249l-149 75l464 265zm-507 654l-128 64v-1l-384 192v455l384-193v144l-448 224L0 1735v-676l576-288l576 288v80zm-640 710v-455l-384-192v454l384 193zm64-566l369-184l-369-185l-369 185l369 184zm576-1l448-224l448 224v527l-448 224l-448-224v-527zm384 576v-305l-256-128v305l256 128zm384-128v-305l-256 128v305l256-128zm-320-288l241-121l-241-120l-241 120l241 121z"/></svg>
+                    <span>Products Management</span></a>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
-                    <span>Bootstrap</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                    <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                    <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-                    <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
-                    <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
-                    <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
-                    <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
-                    <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
-                    <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
-                    <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
-                    <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
-                    <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
-                    <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
-                    <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
-                    <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
-                    <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
-                    <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
-                    <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
-                    <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
-                    <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
-                </ul>
+                <a href="{{route('admin.products-characters.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+                        <path fill="currentColor" d="M0 0v26h9V0H0zm2 2h5v3.75l-.906-.875l-1.282.625L3.22 3.594L2 4.656V2zm3.813.594a.602.602 0 0 0-.594.594c0 .321.272.593.593.593a.602.602 0 0 0 .594-.594a.602.602 0 0 0-.593-.593zM12 4v2h6V4h-6zm8 0v2h6V4h-6zM2 11h5v5H2v-5zm3 .813c-.355.053-.688.374-.688.374s-.035-.029-.093-.062c-.2-.114-.684-.34-1-.031c-.41.399-.031 1.094-.031 1.094s-.596.49-.407 1a.575.575 0 0 0
+                        .25.28c.316.182.781.095.781.095s.21.44.532.624a.566.566 0 0 0 .312.063c.486-.027.657-.844.657-.844s.807-.09.937-.594c.115-.445-.494-.798-.625-.874c0 0 .158-.812-.281-1.063A.52.52 0 0 0 5 11.812zM12 12v2h6v-2h-6zm8 0v2h6v-2h-6zm-15.219.688c.028-.008.063-.018.094 0c.248.141-.344.687-.344.687s.762-.1.719.188c-.042.287-.719-.094-.719-.094s.317.704.032.75c-.286.046-.125-.75-.125-.75s-.63.537-.72.281c-.09-.254.657-
+                        .375.657-.375s-.66-.377-.438-.563c.223-.184.532.5.532.5s.115-.573.312-.624zM2 19h5v5H2v-5zm2.5.75s-.205.634-.406.719c-.201.085-.844-.219-.844-.219s.287.638.219.844c-.048.147-.719.406-.719.406s.642.23.688.406c.067.261-.188.844-.188.844s.59-.322.781-.219c.193.102.469.719.469.719s.205-.634.406-.719c.201-.085.844.219.844.219s-.29-.639-.219-.844c.054-.159.719-.406.719-.406s-.635-.247-.688-.406c-.085-.256.188-.844.188-
+                        .844s-.59.322-.781.219c-.192-.102-.469-.719-.469-.719zM12 20v2h6v-2h-6zm8 0v2h6v-2h-6zm-15.5.688a.82.82 0 0 1 .813.812a.82.82 0 0 1-.813.813a.82.82 0 0 1-.813-.813a.82.82 0 0 1 .813-.813z"/></svg>
+                    <span>Products Characters</span></a>
             </li>
-            <li class="menu-header">Stisla</li>
+            <li class="menu-header">Site Managment</li>
             <li class="dropdown">
                 <a href="{{route('admin.category.index')}}" class="nav-link sidebar__ads">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
@@ -72,18 +51,11 @@
                     <span>ChildCategory</span></a>
             </li>
             <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i>
-                    <span>Google Maps</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                    <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                    <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                    <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                    <li><a href="gmaps-marker.html">Marker</a></li>
-                    <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                    <li><a href="gmaps-route.html">Route</a></li>
-                    <li><a href="gmaps-simple.html">Simple</a></li>
-                </ul>
+                <a href="{{route('admin.flash-sale.index')}}" class="nav-link sidebar__ads">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#808080">
+                        <g fill="none" stroke="#808080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M7.729 15.286h5m-2.502-2.5h.01m-.008 5h.01M6.5 3.697C9.533 6.782 14.536.124 17.496 2.54C19.199 3.93 18.66 7 16.449 9"/>
+                            <path d="M18.664 6.578c.983.179 1.204.765 1.497 2.392c.265 1.466.339 3.225.339 3.974a1.3 1.3 0 0 1-.338.743c-2.057 2.035-6.137 5.878-8.196 7.787c-.808.681-2.028.696-2.886.07c-1.756-1.491-3.443-3.178-5.097-4.701c-.664-.808-.648-1.956.076-2.717c2.178-2.135 6.12-5.789 8.346-7.807c.223-.18.496-.294.79-.319c.498 0 1.355.063 2.19.109"/></g></svg>
+                    <span>Flash Sale</span></a>
             </li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i>

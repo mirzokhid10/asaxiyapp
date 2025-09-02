@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserProfileController;
+use App\Http\Controllers\Frontend\FrontendProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Socialite\ProviderRedirectController;
 use App\Http\Controllers\Socialite\ProviderCallbackController;
@@ -30,6 +31,12 @@ require __DIR__ . '/auth.php';
 ///////////////////////////////////////////
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+///////////////////////////////////////////
+////    Admin Controller Route
+///////////////////////////////////////////
+
+Route::get('product-detail/{slug}', [FrontendProductController::class, 'showProduct'])->name('product-detail');
 
 ///////////////////////////////////////////
 ////    User Controller Route

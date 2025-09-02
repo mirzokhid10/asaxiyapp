@@ -1,4 +1,7 @@
+
+
 <script>
+
     const swiper = new Swiper('.myBrandSwiper', {
         loop: true,
         autoplay: {
@@ -85,5 +88,61 @@
             }
         });
     });
+
+    const weeklySwiper = new Swiper('.weekly__discount-carousel', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            nextEl: '.weekly-btn-next',
+            prevEl: '.weekly-btn-prev',
+        },
+        breakpoints: {
+            768: {
+                spaceBetween: 20,
+            },
+            1024: {
+                spaceBetween: 30,
+            }
+        }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const galleryThumbs = new Swiper('.slider-more-about-nav', {
+            direction: 'vertical',
+            spaceBetween: 10,
+            slidesPerView: 4,
+            watchSlidesProgress: true,
+            navigation: {
+                nextEl: '.slider-more-about-nav .swiper-button-next',
+                prevEl: '.slider-more-about-nav .swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                    direction: 'horizontal',
+                    slidesPerView: 3,
+                },
+                768: {
+                    direction: 'vertical',
+                    slidesPerView: 4,
+                }
+            }
+        });
+
+        const galleryMain = new Swiper('.slider-more-about-for', {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: galleryThumbs
+            },
+            navigation: {
+                nextEl: '.slider-more-about-for .swiper-button-next',
+                prevEl: '.slider-more-about-for .swiper-button-prev',
+            },
+            lazy: true,
+        });
+    });
+
+
 
 </script>

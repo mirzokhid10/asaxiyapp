@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/regular.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/brands.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/swipper-bundle.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/swiper-bundle.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery.fancybox.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/fonts.css') }}">
@@ -52,8 +52,9 @@
             Main Content Start
         ==============================-->
 
-    @yield('content')
-
+    <main>
+        @yield('content')
+    </main>
     <!--============================
         Main Content End
         ==============================-->
@@ -96,7 +97,6 @@
 
     {{-- Swiper JS Link --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
     {{-- Notification Lib JS Link --}}
     <x-notify::notify />
     @notifyJs

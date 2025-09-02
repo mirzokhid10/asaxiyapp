@@ -1,3 +1,4 @@
+
 <section class="section mb-40 ">
     <div class="row flex-lg-nowrap flex-wrap m-0 static_banner-box " style="gap: 20px;">
         @foreach ($homepage_secion_banner_ads as $homepage_secion_banner_ad)
